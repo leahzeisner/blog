@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+
+
+{% block content %}
+    <section id="welcome">
+        <header id="main-navigation">
+            <img src="{% static "blog/images/profile.JPG" %}" alt="Leah - The Author Of This Blog" />
+            <h2>LEAH'S BLOG</h2>
+        </header>
+        <p>Hi, I'm Leah and I love to blog about Taylor Swift</p>
+    </section>
+
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+
+    <section id="about">
+        <h2>What I do</h2>
+        <p>I love web development and hiking</p>
+        <p>My goal is to keep growing as a developer...</p>
+    </section>
+
+{% endblock %}
