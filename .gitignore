@@ -1,1 +1,9 @@
 .DS_Store
+.env
+.ebextensions
+requirements.txt
+staticfiles
+code.zip
+django_my_site
+__pycache__/
+custom_storage.py
